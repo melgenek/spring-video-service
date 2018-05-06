@@ -1,5 +1,3 @@
-<a href="/upload">Upload video</a>
-
 <h2>Videos</h2>
 <ul>
 <#list videos as video>

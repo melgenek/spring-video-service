@@ -12,7 +12,7 @@ import kotlin.streams.toList
 @Controller
 class PageController(@Value("\${video.location}") val videoLocation: String) {
 
-	@GetMapping
+	@GetMapping("/")
 	fun index(model: Model): String {
 		// getting all of the files in video folder
 		val videos = Files.list(Paths.get(videoLocation)).map { it.fileName.toString() }.toList()
@@ -26,10 +26,4 @@ class PageController(@Value("\${video.location}") val videoLocation: String) {
 		return "video"
 	}
 
-	@GetMapping("/upload")
-	fun upload(): String {
-		return "upload"
-	}
-
 }
-
